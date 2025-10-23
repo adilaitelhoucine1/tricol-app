@@ -38,4 +38,19 @@ public class FournisseurService {
        return fournisseurRepository.save(fournisseur_find);
 
     }
+
+    public  String  deleteFournisseur( Long id){
+        Optional<Fournisseur> fournisseurOptional = fournisseurRepository.findById(id);
+        if(fournisseurOptional.isPresent()){
+            fournisseurRepository.delete(fournisseurOptional.get());
+            return "delete avec succes";
+        }else {
+            return "Fournisseur makaynsh";
+        }
+
+    }
+
+    public  Fournisseur addFournisseur(Fournisseur fournisseur){
+        return fournisseurRepository.save(fournisseur);
+    }
 }

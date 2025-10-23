@@ -37,6 +37,18 @@ public class FournisseurController {
     }
 
 
+    @PostMapping
+    public Fournisseur addFournisseur(@RequestBody Fournisseur fournisseur){
+        return  fournisseurService.addFournisseur(fournisseur);
+    }
+
+
+
+    @DeleteMapping("/{id}")
+    public  String deleteFournisseur(@PathVariable("id") Long id){
+       return fournisseurService.deleteFournisseur(id);
+
+    }
 
 
 }

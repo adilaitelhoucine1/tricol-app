@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class AppConfig {
     @Bean
     public FournisseurService fournisseurService() {
+
         return new FournisseurService();
     }
 }

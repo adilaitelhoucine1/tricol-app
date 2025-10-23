@@ -20,7 +20,7 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackages = "com.tricol.repository")
 public class JpaConfig {
 
-    // Configuration de la source de données
+
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -31,7 +31,7 @@ public class JpaConfig {
         return dataSource;
     }
 
-    // Configuration de l'EntityManagerFactory
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
@@ -42,7 +42,7 @@ public class JpaConfig {
         return emf;
     }
 
-    // Gestionnaire de transactions
+
     @Bean
     public JpaTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -50,13 +50,13 @@ public class JpaConfig {
         return transactionManager;
     }
 
-    // Traduction des exceptions JPA/Hibernate vers Spring
+
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    // Propriétés Hibernate
+
     private Properties hibernateProperties() {
         Properties props = new Properties();
         props.put("hibernate.hbm2ddl.auto", "update");
